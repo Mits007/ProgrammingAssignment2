@@ -43,10 +43,10 @@ cacheSolve <- function(x, ...) {
         print("getting inverse from cache")
         return(matrix_inverse)
     }
-    else{
-        matrix_value = x$getmatrix()
-        matrix_inverse = solve(matrix_value)
-        x$setinverse(matrix_inverse)
-    }
-        
+    
+    matrix_value = x$getmatrix()
+    matrix_inverse = solve(matrix_value)
+    x$setinverse(matrix_inverse)
+    matrix_inverse
+    
 }
