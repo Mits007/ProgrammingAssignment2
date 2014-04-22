@@ -9,12 +9,12 @@
 ## return a list with four functions
 
 makeCacheMatrix <- function(x = matrix()) {
-    m <- matrix() # inverse matrix
+    m <- NULL # inverse matrix
     
     setmatrix <-function(y){
         if (is.matrix(y) == TRUE) x<<-y
         else print("Input is not a matrix")
-        m<<-matrix()
+        m<<-NULL
     }
     
     getmatrix<-function() x
@@ -39,7 +39,7 @@ cacheSolve <- function(x, ...) {
     ## Return a matrix that is the inverse of 'x'
     
     matrix_inverse<-x$getinverse()
-    if (!identical(matrix_inverse, matrix())) {
+    if (!is.null(matrix_inverse)) {
         print("getting inverse from cache")
         return(matrix_inverse)
     }
